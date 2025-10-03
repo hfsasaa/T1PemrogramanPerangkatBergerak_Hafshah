@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'form_mahasiswa.dart';
 import  'about_page.dart';
 import 'setting_page.dart';
+import 'form_dosen.dart';
+import 'form_matkul.dart';
 
 void main() => runApp(const MyApp());
 
@@ -23,6 +25,8 @@ class MyApp extends StatelessWidget {
         '/list': (_) => const DaftarMahasiswaPage(),
         '/tentang': (_) => const AboutPage(),
         '/settings': (_) => const SettingsPage(),
+        '/dosen': (_) => const FormDosenPage(),
+        '/matkul': (_) => const FormMatkulPage(),
       },
     );
   }
@@ -77,6 +81,22 @@ class MainWithDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, '/settings');
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text('Form Dosen'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/dosen');
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.book),
+              title: const Text('Form Mata Kuliah'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/matkul');
               },
             ),
           ],
